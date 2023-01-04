@@ -1,0 +1,30 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    padding: 15px;
+}
+.logo {
+    padding: 0 40px;
+    color: red;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.lista {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    margin-left: 30px;
+    padding: 0, 40px;
+}
+.lista > li {
+    padding: 0 40px;
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 20px;
+    margin-left: 30px;
+ }
+   
