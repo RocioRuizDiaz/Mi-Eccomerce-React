@@ -1,0 +1,14 @@
+.product__seccion {
+    background-color: var(--container);
+    color: aquamarine;
+    width: 510px;
+    margin: 30px auto;
+    padding: 24px;
+    min-height: 400px;
+    border-radius:  16px;
+}
+.product__title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 16px;
+    color:black;
+}
