@@ -1,11 +1,15 @@
 
 const SimulationFetch = (dataBase, time) => {
   return new Promise((resolve, rejact) => {
-    setTimeout(() => {
+    setTimeout((error, data) => {
+      if (console.error()) {
+        rejact (error);
+        return;
+      }
         resolve(dataBase);
-        rejact(new Error("Ups, algo salio mal"))
+       
     }, time)
   } )
 }
 
-export default SimulationFetch
+export default SimulationFetch;
