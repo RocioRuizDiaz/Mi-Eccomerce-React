@@ -2,58 +2,46 @@ import Image from "../Image";
 import Description from "../Description";
 import ItemCount from "../ItemConunt/ItemCount";
 import ButtonDetalles from "../ButtonDetalles";
-import SimulationFetch from "../../Product/SimulationFetch";
-import Productos from "../../Product/Productos";
+import { getProductsById } from "../../Product/Productos";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 
+function ItemDetail({product}) {
 
-const ItemDetail = () => {
-    const [datos, setDatos] =useState([]);
-    const {idItem} =useParams();
+const { name, category, price, full, description, stock } = product;
 
-    useEffect(() => {
-        SimulationFetch(Productos.filter(flt => flt.id === idItem), 2000)
-        .then(resp => setDatos(resp))
-        .catch(error => console.log(error))
-    }, [idItem])
 
   return (
     <div className="detailItem">
-        {
-            datos.map(item => (
-                <>
-                <div className="containerLeft">
-                    <Image
-                    imagen={item.imgProduct.firtsImg}
-                    />
-                </div>
+      <ItemDetail product={product} />
+      {product.map(items => (
+        <>
+          <div className="containerLeft">
+            <Image
+              imagen={items.imgProduct.firtsImg} />
+          </div>
 
-                   <div className="containerRigth">
-                        <Description
-                             title= {item.title}
-                             parrafo= {item.description}
-                             cantidad = {item.stock}
-                             precio={item.price}
-                        />     
-                     
-                      <div className="button">
-                          <ItemCount
-                            cant={5}
-                         />
-                    
-                    <ButtonDetalles
-                        txt="Agregar al carrito"
-                     />   
-                </div>
-             </div>
-             </>
-            ))
-        }
+          <div className="containerRigth">
+            <Description
+              title={items.title}
+              parrafo={items.description}
+              cantidad={items.stock}
+              precio={items.price} />
+
+            <div className="button">
+              <ItemCount
+                cant={5} />
+
+              <ButtonDetalles
+                txt="Agregar al carrito" />
+            </div>
+          </div>
+        </>
+      ))}
 
     </div>
-  )
+  );
 }
 
 export default ItemDetail;

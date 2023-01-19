@@ -1,30 +1,108 @@
 import './navbar.css';
-import ItemListContainer from '../../pages/ItemListContainer/ItemListContainer';
 import CartWidget from '../CartWidget';
+import { Link } from "react-router-dom";
 
-import React from 'react'
 
-const NavBar = () => {
+
+function NavBar( props) {
   return (
-    <div className="navBar">
-    <div className='logo'>
-      <img src='../img/logo.jpg'></img>
+    <div>
+      <nav className='containerItemList'>
+<ul>
+    <li>
+        <Link to="/Category/Mangas">
+            {props.itemUno}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Preventas">
+            {props.itemDos}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Comics">
+            {props.itemTres}
+        </Link>
+    </li>
+</ul>
+<ul>
+    <li>
+        <Link to="/Category/Mangas">
+            {props.itemUno}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Preventas">
+            {props.itemDos}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Comics">
+            {props.itemTres}
+        </Link>
+    </li>
+</ul>
+<ul>
+    <li>
+        <Link to="/Category/Mangas">
+            {props.itemUno}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Preventas">
+            {props.itemDos}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Comics">
+            {props.itemTres}
+        </Link>
+    </li>
+</ul>
+<ul>
+    <li>
+        <Link to="/Category/Mangas">
+            {props.itemUno}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Preventas">
+            {props.itemDos}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Comics">
+            {props.itemTres}
+        </Link>
+    </li>
+</ul>
+<ul>
+    <li>
+        <Link to="/Category/Mangas">
+            {props.itemUno}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Preventas">
+            {props.itemDos}
+        </Link>
+    </li>
+    <li>
+        <Link to="Category/Comics">
+            {props.itemTres}
+        </Link>
+    </li>
+</ul>
+      </nav>
+      <div className='carrito'>
+        <CartWidget />
+      </div>
     </div>
-    <nav>
-      <ItemListContainer
-        itemUno="Mangas"
-        itemDos="Preventas"
-        itemTres="Comics" />
-    </nav>
-    <div className='carrito'>
-      <CartWidget />
-    </div>
-  </div>
-  )
-  
+  );
+
 }
 
-export default NavBar
+export default NavBar;
 
 
 

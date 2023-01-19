@@ -153,25 +153,25 @@ const Productos = [
     
 ]
 
-export const getProducts = (categoryId) => {
+export const getProducts = (idCategory) => {
 
     return new Promise ((resolve) => {
         setTimeout(() => {
-            resolve(products)
+            resolve(Productos)
         }, 500);
     })
 }
- export const getProductsByCategory = (categoryId) => {
+ export const getProductsByCategory = (idCategory) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.filter(prod => prod.category === categoryId))
+            resolve(Productos.filter(prod => prod.category === idCategory))
         }, 500)
     })
  }
- export const getProductsById = (id) => {
-    return new Promise ((resolve) => {
+ export function getProductsById(id) {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === id))
-        }, 500)
-    })
- }
+            resolve(Productos.find(prod => prod.id === id));
+        }, 500);
+    });
+}

@@ -6,11 +6,11 @@ import ItemDetail from "./components/componentsItem/ItemDetail/ItemDetail";
 function App() {
   return (
     <BrowserRouter>
-    <NavBar />
+     <NavBar />
     <Routes>
-      <Route path='/' element={ <ContainerCardItem greeting='Bienvenidos'/>  } />
+      <Route path='/' element={ <ContainerCardItem/>  } />
       <Route path='/item/:idItem' element={ < ItemDetail/>  } />
-      <Route path='/category/:idCategori' element={ <ContainerCardItem /> } />
+      <Route path='/Category/:idCategory' element={ <ContainerCardItem /> } />
     </Routes>
   </BrowserRouter>
   );
