@@ -1,12 +1,31 @@
 import './navbar.css';
-import CartWidget from '../CartWidget';
-import { Link } from "react-router-dom";
-
+/*import CartWidget from '../CartWidget';
+import { Link } from "react-router-dom";*/
+import logo from '../Img/Logo.jpg';
 
 
 function NavBar( props) {
   return (
-    <div>
+    <header>
+     <a href='#'>
+        <div className='logo'>
+            <img src={logo} alt='logo' width={100} />
+        </div>
+     </a>
+     <ul>
+        <li> 
+            <a href='#'> INICIO </a>
+        </li>
+        <li> 
+            <a href='#'>MANGAS</a>
+        </li>
+     </ul>
+        <div className='cart'>
+            <box-icon name='cart'></box-icon>
+            <span>0</span>
+        </div>
+    </header>
+   /* <div>
       <nav className='containerItemList'>
 <ul>
     <li>
@@ -97,7 +116,7 @@ function NavBar( props) {
       <div className='carrito'>
         <CartWidget />
       </div>
-    </div>
+    </div>*/
   );
 
 }

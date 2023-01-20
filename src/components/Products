@@ -1,7 +1,5 @@
-const description = "Lorem Ipsum is simply "
 
-
-const Productos = [
+[
     {
         "id": 1, 
         "title": "Jujutsu Kaisen", 
@@ -12,8 +10,8 @@ const Productos = [
         "type": "Manga",
         "imgProduct": {
            "firtsImg": "https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/0e/Volume_1.png/revision/latest?cb=202009",
-           "secondaryImg":"https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f6/JJK_New_Key_Visual.jpg/revision/latest/scale-to-width-down/700?cb=20200914020414&path-prefix=es",
-        },
+           "secondaryImg":"https://static.wikia.nocookie.net/jujutsu-kaisen/images/f/f6/JJK_New_Key_Visual.jpg/revision/latest/scale-to-width-down/700?cb=20200914020414&path-prefix=es"
+        }
     },
   
     { 
@@ -26,8 +24,8 @@ const Productos = [
         "type": "Manga",
         "imgProduct": {
             "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/DEMON01.jpg?v=1657956189",
-            "secondaryImg": "https://http2.mlstatic.com/D_NQ_NP_2X_804201-MLA46352614157_062021-F.webp", 
-         },
+            "secondaryImg": "https://http2.mlstatic.com/D_NQ_NP_2X_804201-MLA46352614157_062021-F.webp"
+         }
         
         
     },
@@ -42,8 +40,8 @@ const Productos = [
         "type": "Manga",
         "imgProduct": {
             "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SPY02.jpg?v=1657949646",
-            "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SPY01.jpg?v=1657949646",
-              },
+            "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SPY01.jpg?v=1657949646"
+              }
         },
       
       
@@ -58,8 +56,8 @@ const Productos = [
      "type": "Manga",
      "imgProduct": {
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/BLUELOCK1.jpg?v=1645916437&width=600",
-        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/BLUELOCK2.jpg?v=1645916437&width=600",
-     },
+        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/BLUELOCK2.jpg?v=1645916437&width=600"
+     }
  },
     
      { 
@@ -72,8 +70,8 @@ const Productos = [
      "type": "Manga",
      "imgProduct": {
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/MONSTER02.jpg?v=1663043298",
-        "secondaryImg":"https://cdn.shopify.com/s/files/1/0628/4807/3949/products/MONSTER01.jpg?v=1663043297",
-     },
+        "secondaryImg":"https://cdn.shopify.com/s/files/1/0628/4807/3949/products/MONSTER01.jpg?v=1663043297"
+     }
  },
     
      { 
@@ -86,8 +84,8 @@ const Productos = [
      "type": "Manga",
      "imgProduct":{
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/OSHI01.jpg?v=1657999910",
-        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/OSHI02.jpg?v=1663044655",
-     }, 
+        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/OSHI02.jpg?v=1663044655"
+     }
  },
     
      { 
@@ -100,8 +98,8 @@ const Productos = [
      "type": "Manga",
      "imgProduct": {
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/HUNTER01.jpg?v=1657994573",
-        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/HUNTER02.jpg?v=1657994571",
-       },
+        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/HUNTER02.jpg?v=1657994571"
+       }
      },
    
    
@@ -116,8 +114,8 @@ const Productos = [
      "type": "Manga",
      "imgProduct": {
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/KONO01.jpg?v=1657996193",
-        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/KONO02.jpg?v=1657996193",
-     },
+        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/KONO02.jpg?v=1657996193"
+     }
  },
     
      { 
@@ -130,8 +128,8 @@ const Productos = [
      "type": "Manga",
      "imgProduct": {
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SAOMOTHER01.webp?v=1673698222",
-        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SAOMOTHER02.webp?v=1673698223",
-     },
+        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SAOMOTHER02.webp?v=1673698223"
+     }
     
      
  },
@@ -145,33 +143,31 @@ const Productos = [
      "stock": "3",
      "imgProduct": {
         "firtsImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/SAOMOTHER02.webp?v=1673698223",
-        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/FULLMETAL02.jpg?v=1663024263",
-     },
+        "secondaryImg": "https://cdn.shopify.com/s/files/1/0628/4807/3949/products/FULLMETAL02.jpg?v=1663024263"
+     }
    
     
- },
+ }
     
 ]
 
-export const getProducts = (idCategory) => {
 
-    return new Promise ((resolve) => {
-        setTimeout(() => {
-            resolve(Productos)
-        }, 500);
-    })
-}
- export const getProductsByCategory = (idCategory) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(Productos.filter(prod => prod.category === idCategory))
-        }, 500)
-    })
- }
- export function getProductsById(id) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(Productos.find(prod => prod.id === id));
-        }, 500);
-    });
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

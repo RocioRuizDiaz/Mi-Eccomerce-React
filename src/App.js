@@ -1,18 +1,22 @@
-import NavBar from "./components/NavBar/NavBar";
-import ContainerCardItem from "./components/componentsItem/ContainerCardItem";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemDetail from "./components/componentsItem/ItemDetail/ItemDetail";
-
+//import NavBar from "./components/NavBar/NavBar";
+//import Item from "./components/Item/Item";
+//import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//import ItemDetail from "./components/ItemDetail/ItemDetail";
+import NavBar from "./components/Header/NavBar";
+import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
+//import ItemList from "./components/ItemList/ItemList";
+//import Item from "./components/Item/Item";
+import 'boxicons';
 function App() {
   return (
-    <BrowserRouter>
-     <NavBar />
-    <Routes>
-      <Route path='/' element={ <ContainerCardItem/>  } />
-      <Route path='/item/:idItem' element={ < ItemDetail/>  } />
-      <Route path='/Category/:idCategory' element={ <ContainerCardItem /> } />
-    </Routes>
-  </BrowserRouter>
+    <div >
+    <NavBar />
+    <ItemListContainer />
+     
+     
+     
+   
+    </div>
   );
 }
 

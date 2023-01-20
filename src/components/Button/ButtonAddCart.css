@@ -1,0 +1,24 @@
+
+.comprar{
+    height: 30px;
+    width: 85px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background-color: #cb4cdc7b;
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+ 
+ 
+
+.comprar:hover{
+    border: 1px solid var(--main);
+    background-color: #69e1e1;
+    
+}

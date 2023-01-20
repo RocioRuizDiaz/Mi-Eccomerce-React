@@ -1,13 +1,95 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* body {
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--text)
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --main: #d93636;
+  --secoundary: #d93240;
+  --white: #fff;
+  --card-background: #f2f2f2;
+  --text: #181817;
+  --container: #bfbfbf;
+} */
+/*--------------HEADER-------------- */
+
+
+
+
+
+
+
+
+
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color:black;
+  padding: 15px;
+}
+a{
+  color: #c92e2e;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+a:hover{
+  color: #29cf848f;
+}
+li{
+  list-style: none;
+}
+header ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+header ul li{
+  padding: 0 1rem;
+}
+header ul li a{
+  font-weight: bold;
+}
+header .cart{
+  position: relative;
+  cursor: pointer;
+ 
+ 
+
+}
+header .cart box-icon{
+  width: 35px;
+  height: 35px;
+  background-color: rgba(225, 48, 48, 0.909);
+  box-shadow: 0 5px 10px #363535;
+  border-radius: 70%;
+  margin: 2rem;
+}
+header .cart span{
+  position: absolute;
+  top: -1rem;
+  right: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0rem;
+  font-size: 1.5rem;
+  margin: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  header ul li{
+    display: none;
+  }
+  
 }
