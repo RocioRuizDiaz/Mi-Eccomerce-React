@@ -1,7 +1,7 @@
 import "./ItemDetail.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faArrowLeft, faStar, faStarHafalt, faChevronLeft, faChevronRight  } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faStar,  faChevronLeft, faChevronRight  } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemConunt/ItemCount";
 
@@ -12,7 +12,7 @@ function ItemDetail({product}) {
   const {name, category, price, deta, description, stock } = product;
 
   return (
-    <main className="pt-10 pb-12 pl-18">
+    <main className="product__seccion">
       
       <Link to="/">
         <button className="pl-56">
