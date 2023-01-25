@@ -5,20 +5,32 @@ import Counter from './Counter';
 
 function ItemCount({stock}) {
 
-    const [goToCart, setGoToCart ] = useState(false)
+   const [ count, setCount ] = useState(0)
+
+const decrement = () => {
+    if (count > 1){
+      setCount(count - 1);
+    }
+}
+const incremente = () => {
+  if ( count > 1) {
+    setCount (actual => + 1);
+  }
+    
+}
 
   return (
     <>
-      <div className="itemCount">
-        { !goToCart ?
+      
+        { 
           <>
               <Counter stock={stock} />
-               <button onClick={() => setGoToCart(true)} id="aumentar">
+               <button onClick={() => setCount(true)} id="aumentar">
                     Agregar al carrito
                 </button>
            </>
-         
-          :
+          }
+          
           <div className='w-full'>
             <Link to="/cart">
               <button>
@@ -31,9 +43,9 @@ function ItemCount({stock}) {
               </button>
             </Link>
             </div>
-        }
         
-      </div>
+        
+      
     </>
   );
 }

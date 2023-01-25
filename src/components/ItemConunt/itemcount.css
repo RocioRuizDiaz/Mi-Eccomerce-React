@@ -1,12 +1,22 @@
+.item-cont{
+    
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    color: #a47aec;
+    font-size: 1rem;
+}
+
+
 .counter {
     display: flex;
     flex-direction: column;
     margin: 40px;
-    width: 130px;
+    width: 110px;
 }
-.controllers {
+.count {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }

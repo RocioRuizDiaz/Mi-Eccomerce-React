@@ -1,42 +1,34 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle, faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-
-
-export const Counter = (stock) => {
-const [ count, setCount ] = useState(1)
+export const Counter = ({stock}) => {
+const [ count, setCount ] = useState(0)
 
 const decrement = () => {
-    setCount(actual => actual - 1)
+    if (count > 1){
+      setCount(count - 1);
+    }
 }
 const incremente = () => {
-    setCount (actual => + 1)
+  if ( count > 1) {
+    setCount (actual => + 1);
+  }
+    
 }
 
   return (
-    <div>
-        {count <= 1 ?
-         <button>
-            <FontAwesomeIcon icon={faMinusCircle}/>
-         </button>
-            :
-          <button onClick={decrement}>
-            <FontAwesomeIcon icon={faMinusCircle}/>
-          </button>         
-    }
-    <input value={count} type="number" onChange={e => setCount(e.target.value)}></input>
-    { count >= stock.stock ?
-        <button>
-            <FontAwesomeIcon icon={faMinusCircle}/>
+    <div className="item-cont">
+      <div>
+        <button className="cont" onClick={decrement}>
+          -
         </button>
-            :
+        <strong className="count">{count}</strong>
         <button onClick={incremente}>
-            <FontAwesomeIcon icon={faPlusCircle}/>
-        </button>  
- 
-    }
+          +
+        </button>         
+        </div>
+        
     </div>
+    
   )
 }
 export default Counter

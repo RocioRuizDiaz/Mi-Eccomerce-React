@@ -1,4 +1,4 @@
-import ListContainer from "./components/ItemListContainer/ListContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import 'boxicons';
@@ -10,8 +10,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ListContainer greeting='Bienvenidos a MangaShonnen' />} />
-          <Route path="/category/:categoryId" element={ <ListContainer /> } />
+          <Route path="/" element={<ItemListContainer greeting='Bienvenidos a MangaShonnen' />} />
+          <Route path="/category/:categoryId" element={ <ItemListContainer /> } />
           <Route path='/item/:productId' element={ <ItemDetailContainer /> } />
         </Routes>
 
