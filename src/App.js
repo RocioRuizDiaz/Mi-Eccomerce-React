@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ListContainer greeting='Bienvenidos a MangaShonnen' />} />
           <Route path="/category/:categoryId" element={ <ListContainer /> } />
-          <Route path='/item/:productbyId' element={ <ItemDetailContainer /> } />
+          <Route path='/item/:productId' element={ <ItemDetailContainer /> } />
         </Routes>
 
       </BrowserRouter>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function NavBar() {
   return (
     <header>
-        <nav className="flex items-center justify-between flex-wrap bg-gray-900 p-6">
+        <nav className="">
              <ul>
                 <li> 
                     <Link to='/'>PRODUCTOS</Link >
@@ -16,14 +16,17 @@ function NavBar() {
                 <li> 
                     <Link to='/category/comics'>COMICS</Link >
                 </li>
-             </ul>
-                <div className='cart'>
-                    <box-icon name='cart'></box-icon>
-                    <span>0</span>
-                </div>
-                <ButtonAddCart />
 
-                </nav>
+                <div className='carrito'>
+                <ButtonAddCart />
+                </div>
+            
+                
+             </ul>
+                
+             </nav> 
+
+                
     </header>
 
   );

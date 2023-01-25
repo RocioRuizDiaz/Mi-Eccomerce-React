@@ -9,7 +9,7 @@ ul{
 }
 .productos{
     width: 280px;
-    height: 620px;
+    height: 510px;
     display: flex;
     flex-direction: column;
     padding: 10px;
