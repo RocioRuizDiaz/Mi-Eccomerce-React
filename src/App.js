@@ -1,22 +1,23 @@
-//import NavBar from "./components/NavBar/NavBar";
-//import Item from "./components/Item/Item";
-//import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//import ItemDetail from "./components/ItemDetail/ItemDetail";
-import NavBar from "./components/Header/NavBar";
-import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
-//import ItemList from "./components/ItemList/ItemList";
-//import Item from "./components/Item/Item";
-import 'boxicons';
+import ListContainer from "./components/ItemListContainer/ListContainer";
+import NavBar from "./components/NavBar/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import 'boxicons';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
 function App() {
   return (
-    <div >
-    <NavBar />
-    <ItemListContainer />
-     
-     
-     
-   
-    </div>
+    
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ListContainer greeting='Bienvenidos a MangaShonnen' />} />
+          <Route path="/category/:categoryId" element={ <ListContainer /> } />
+          <Route path='/item/:productbyId' element={ <ItemDetailContainer /> } />
+        </Routes>
+
+      </BrowserRouter>
+  
+    
   );
 }
 

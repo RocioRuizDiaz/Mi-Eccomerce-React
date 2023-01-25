@@ -1,4 +1,41 @@
-import './ItemList.css';
+import Item from "../Item/Item";
+import { Link } from "react-router-dom";
+
+
+
+const ItemList = ({productos}) => {
+  return (
+  <ul >
+    {productos.map((prod) => (
+    
+       <Item 
+         key={prod.id}
+          prod={prod} />
+         
+    ))}
+     
+
+
+  </ul>
+  )
+}
+
+export default ItemList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import './ItemList.css';
 import ButtonAddCart from '../Button/ButtonAddCart';
 //import Item from '../Item/Item';
 
@@ -18,7 +55,8 @@ function ItemList({products}) {
   );
 }
 
-export default ItemList;
+export default ItemList;*/
+
 
 
 

@@ -1,4 +1,4 @@
-.product {
+/*.product {
     background-color: var(--card-background);
     width: 220px;
     padding: 20px 16px;
@@ -22,9 +22,10 @@
     align-items: center;
     color: var(--text);
 }
+
 .product__oldPrice{
     text-decoration: line-through;
 }
 .product__price{
     font-weight: bold;
-}
+}*/

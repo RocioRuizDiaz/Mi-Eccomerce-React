@@ -27,19 +27,14 @@
     .products__section{
         width: 970px;
     }
-} */
+} 
 .title{
     display: flex;
     align-items: center;
     justify-content: center;
-font-size: 2rem;
-padding: 10px 0 0 0;
-color: #d93240;
-
-
-
-
-
+    font-size: 2rem;
+    padding: 10px 0 0 0;
+    color: #d93240;
 }
 .productos{
     width: 97%;
@@ -122,4 +117,4 @@ font-family:Verdana, Tahoma, sans-serif;
 }
 .buttom .btn a{
     font-weight: 700;
-}
+}*/

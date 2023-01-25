@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* body {
+ /*body {
  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: var(--text)
+  background-color: var(--text);
+  
+
 }
 
 :root{
@@ -13,30 +15,24 @@
   --secoundary: #d93240;
   --white: #fff;
   --card-background: #f2f2f2;
-  --text: #181817;
+  /*--text: #181817;
   --container: #bfbfbf;
+
 } */
-/*--------------HEADER-------------- */
-
-
-
-
-
-
-
-
-
+--------------HEADER-------------- */
 
 header{
+  height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   background-color:black;
   padding: 15px;
+  
 }
 a{
-  color: #c92e2e;
+
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -46,7 +42,7 @@ a:hover{
 li{
   list-style: none;
 }
-header ul{
+nav ul{
   display: flex;
   padding: 0;
   margin: 0;

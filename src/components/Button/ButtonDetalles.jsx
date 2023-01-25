@@ -2,7 +2,7 @@
 
 const ButtonDetalles = (props) => {
   return (
-    <button id="detalles">{props.txt}</button>
+    <button>{props}</button>
   )
 }
 
