@@ -18,35 +18,34 @@ const incremente = () => {
   }
     
 }
-
   return (
-    <>
-      
-        { 
-          <>
-              <Counter stock={stock} />
-               <button onClick={() => setCount(true)} id="aumentar">
-                    Agregar al carrito
-                </button>
-           </>
-          }
-          
-          <div className='w-full'>
+           <div>
+              <div className="item-cont">
+             <div>
+               <button className="cont" onClick={decrement}>
+                 -
+               </button>
+               <strong className="count">{count}</strong>
+               <button onClick={incremente}>
+                 +
+               </button>         
+               </div>
+
+            </div>
+             <div className='w-full'>
             <Link to="/cart">
               <button>
                 Finalizar Compra
               </button>
             </Link>
             <Link to="/">
-              <button className='uppercase border-widh w-full mt-4 rounded-sm border border-gray-800 py-4 '>
+              <button className='uppercase border-widh w-full mt-4 '>
               Continuar Comprando
               </button>
             </Link>
             </div>
-        
-        
       
-    </>
+    </div>
   );
 }
 

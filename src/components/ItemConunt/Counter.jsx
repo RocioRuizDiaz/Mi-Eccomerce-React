@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export const Counter = ({stock}) => {
+  
 const [ count, setCount ] = useState(0)
 
 const decrement = () => {
@@ -10,7 +11,7 @@ const decrement = () => {
 }
 const incremente = () => {
   if ( count > 1) {
-    setCount (actual => + 1);
+    setCount (count => + 1);
   }
     
 }

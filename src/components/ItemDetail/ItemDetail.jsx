@@ -10,16 +10,13 @@ function ItemDetail({product}) {
   return (
     <div className="product__seccion">
         <img src={product.deta} alt={product.name}/>
-        <div className="contenedor">
         <h2 className="title">{product.name}</h2>
+        <div className="contenedor">
         <h3 className="price">${product.price}</h3>
         <p className="type">{product.category}</p> 
          <h3>{product.description}</h3>
-         
-         <ItemCount  stock={product.stock} />
-       
         </div>
-      
+        <ItemCount  stock={product.stock} />
        </div>
   );
 }
