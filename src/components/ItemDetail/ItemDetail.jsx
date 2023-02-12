@@ -1,25 +1,35 @@
-import "./ItemDetail.css"
-//import { Link } from "react-router-dom";
+import React,{ useContext }from "react";
 import ItemCount from "../ItemConunt/ItemCount";
+import { cartContext } from "../../context/CartContext";
 
-
-
-function ItemDetail({product}) {
-
+const ItemDetail = ({ product }) => {
+  const { addItem } = useContext(cartContext );
+  
+  const onAdd = (quantity ) => {
+    addItem(product, quantity);
+  };
 
   return (
-    <div className="product__seccion">
-        <img src={product.deta} alt={product.name}/>
-        <h2 className="title">{product.name}</h2>
-        <div className="contenedor">
-        <h3 className="price">${product.price}</h3>
-        <p className="type">{product.category}</p> 
-         <h3>{product.description}</h3>
+    <div className="card mb-3">
+      <div className="row g-0">
+        <div className="col-md-4">
+            <img alt={product.title} src={`/images/${product .imageId}`} className="img-fluid rounded-start" />
         </div>
-        <ItemCount  stock={product.stock} />
-       </div>
+        <div className="col-md-8">
+          <div className="card-body">
+              <h5 className="card-title">{product.title}</h5>
+              <p className="card-text">${product.price}</p>
+              <p className="card-text">{product.categoryId}</p>
+              <p className="card-text">Stock disponible: {product.stock} unidad/es</p>
+              <p className="card-text">Descripcion {product.description}</p> 
+              <ItemCount stock={product.stock} onAdd={onAdd} />
+          </div>
+        </div>
+      </div>
+    </div>
+  
   );
-}
+};
 
 export default ItemDetail;
 

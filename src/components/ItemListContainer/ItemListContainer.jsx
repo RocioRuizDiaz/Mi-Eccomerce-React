@@ -1,35 +1,63 @@
-//import "./ItemListContainer.css";
-import {  getProducts, getProductsByCategory} from "../../Data"
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import Loading from "../Loading/Loading";
+import {getFirestore, getDocs, collection, query, where, QuerySnapshot} from "firebase/firestore"
 
 
-const ItemListContainer = ({greeting}) => {
-  const[products, setProducts] = useState([]);
-
-  const {categoryId} =useParams();  
-   //const getProducts = fetch('https://fakestoreapi.com/products');
-
-   useEffect(() =>{
-    /*getProducts*/
-    const asynFunction = categoryId ? getProductsByCategory: getProducts
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+   
+ /* const getProducts = () => {
+    const db = getFirestore ();
+    const querySnapshot = collection(db, "items");
     
-    asynFunction(categoryId)
-    .then((products) =>{
-      setProducts(products);
+      if (category){
+        const newConfiguration = query(
+          querySnapshot, 
+          where('categoryId', '==', category)
+          );
+          getDocs(newConfiguration)
+           .then((response) => {
+             const data = response.docs.map((doc)=>{
+              return {id: doc.id, ...doc.data()};
+          });
+          setLoading(false);
+          setProducts(data);  
+      })
+        .catch(error => console.log(error));   
+
+      } else{
+        getDocs(querySnapshot)
+        .then((response) => {
+          const data = response.docs.map((doc)=>{
+            return {id: doc.id, ...doc.data()};
+          });
+           setLoading(false);
+          setProducts(data);  
+      })
+        .catch(error => console.log(error));           
+      }
+  };*/
+  
+  useEffect(() => {
+    const db = getFirestore();
+    const itemsCollection = collection(db, "items");
+    const q = id ? query (itemsCollection, where("category", "==", id)) : itemsCollection;
+      getDocs(q).then((snapShot) => {
+                setItems(snapShot.docs.map((doc) => ({id:doc.id, ...doc.data()})));
+                setLoading(false);
     })
-    /*.then((response) => {
-      console.log(response)
-      setProducts(response)
-    })*/
-    .catch((error) => console.log(error))
-   }, [categoryId])
+  }, [id]);
 
   return (
     <div>
-      <h3>{greeting}</h3>
-      <ItemList productos={products} />
+     
+      {loading ? 
+        <Loading /> 
+        :<ItemList items={items} />}
     </div>
   );
 };

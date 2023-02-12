@@ -1,31 +1,15 @@
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBinoculars, faCartPlus  } from "@fortawesome/free-solid-svg-icons";
-import "./Item.css";
 
-
-function Item({ prod }) {
+const Item = ({ item  }) => {
  
-  const { id, img, name, category, price,  } = prod;
-
   return (
-    
-    <div className="productos" >
-      <img className="image" src={img} alt="image" />
-      <div className="contaier">
-         <h2 className="title" >{name}</h2>
-         <p className="price">${price}</p>
-         <p className="type">{category}</p>
-        <button type="button" >
-         Agregar al carrito <FontAwesomeIcon  icon= {faCartPlus}></FontAwesomeIcon> 
-        </button>
-        <Link to={`/item/${id}`}>
-        <button type="button">
-           Ver detalles <FontAwesomeIcon icon={faBinoculars}></FontAwesomeIcon> 
-        </button>
-        </Link>
-      </div>
-    </div>
+     <Link to={"/item/" + item.id} className="text-decoration-none text-dark">
+       <img className="image" alt={item .title} src={`/images/${item .imageId}`} width={220} height={235.33}/>
+       <h3 className="card-text">{item .title}</h3>
+
+         </Link>
+  
+  
     
   );
 }

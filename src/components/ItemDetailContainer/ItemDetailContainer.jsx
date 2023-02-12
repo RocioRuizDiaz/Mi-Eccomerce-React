@@ -1,34 +1,41 @@
-import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
-import { getProductById } from "../../Data";
 import { useParams } from "react-router-dom";
-
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Loading from "../Loading/Loading";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState()
-
-  const { productId } = useParams()
-
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    
-    getProductById(productId).then(response => {
-        setProduct(response)
-    }).finally(() => {
-        setLoading(false)
-    })
-  }, [productId])
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
   
 
-  if (loading) {
-    return <div className="block rounded bg-green-500 text-center ">
-        Cargando
-    </div>
-  }
+
+
+ useEffect (() => {
+  const db= getFirestore();
+  const querySnapshot = doc(db, "items", id)
+  getDoc(querySnapshot).then((querySnapshot) => {
+    if (querySnapshot.exists()){
+      setProduct({id: querySnapshot.id, ...querySnapshot.data()});
+      setLoading(false);
+    }else {
+     console.log("error");
+    }
+   })
+   
+  }, [])
+
     return (
-      <ItemDetail 
-    product={product} />
+      
+        <div className="container">
+          {loading ? <Loading /> :<ItemDetail product={product} />}
+          
+        
+        </div>
+      
+      
+      
   )
 
 
