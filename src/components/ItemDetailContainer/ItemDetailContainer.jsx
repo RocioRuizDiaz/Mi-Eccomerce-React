@@ -9,12 +9,10 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   
-
-
-
- useEffect (() => {
   const db= getFirestore();
-  const querySnapshot = doc(db, "items", id)
+  const querySnapshot = doc(db, "items", id);
+  
+  useEffect (() => {
   getDoc(querySnapshot).then((querySnapshot) => {
     if (querySnapshot.exists()){
       setProduct({id: querySnapshot.id, ...querySnapshot.data()});

@@ -11,33 +11,40 @@ const  CartContextProvider = ({children}) => {
       if(isInCart(item.id)) {
         let pos = cart.findIndex(x => x.id === item.id);
         cart[pos].quantity += quantity;
-        setCart([...cart, {...item, quantity: quantity}]);
+        setCart(cart);
       } else {
         setCart([...cart, {...item, quantity: quantity}])
       };
     
     };
 
-      const removeItem = (productId) => {
-        setCart(cart.filter((product) => product.id !== productId));
+      const removeItem = (id) => {
+        const products = cart.filter(x => x.id !== id);
+        setCart(products);
       };
-
-      const isInCart = (id) => {
-        return cart.some((item) => item.id === id)
-      }; 
 
       const clear = () => {
         setCart([]);
-      }
+      };
+
+      const isInCart = (id) => {
+        return cart.some(x => x.id === id)
+      }; 
        
       const cartTotal =() => {
-        return  cart.reduce((acc, curr) => acc + curr.quantity, 0); 
+        return  cart.reduce((total, item) =>
+        total + item.quantity, 0); 
 
       }
 
       const sumaTotal = () => {
-        return cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0);
+        return cart.reduce((total, item) =>
+        total + item.quantity * item.price, 0);
       }
+
+
+
+      
   return (
     <cartContext.Provider value={{ cart, addItem, clear, removeItem,cartTotal, sumaTotal }}>
         {children}

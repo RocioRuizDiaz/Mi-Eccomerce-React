@@ -5,15 +5,6 @@ import { cartContext } from "../../context/CartContext";
 const CartWidget = () => {
   const { cartTotal } = useContext(cartContext);
 
-
-
-
-
-
-
-
-
-
   return (
     
       <Link to={"/cart"}type="button" className="btn body position-relative" title="Ir al carrito">

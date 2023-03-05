@@ -13,20 +13,19 @@ import Checkout from "./components/Checkout";
 
 function App() {
   return (
-      <BrowserRouter>
-       <CartContextProvider>
+    <CartContextProvider>
+      <BrowserRouter>     
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:category" element={ <ItemListContainer /> } />
+          <Route path="/category/:categoryId" element={ <ItemListContainer /> } />
           <Route path="/item/:id" element={ <ItemDetailContainer /> } />
           <Route path="/cart" element={ <Cart /> } />
           <Route path="/checkout" element={ <Checkout /> } />
           <Route path="/Agradecimiento/:id" element={<Agradecimiento />} />;
         </Routes>
-        </CartContextProvider>
       </BrowserRouter>
-      
+      </CartContextProvider>
     
   );
 }

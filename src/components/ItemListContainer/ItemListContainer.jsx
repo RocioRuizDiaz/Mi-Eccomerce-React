@@ -2,55 +2,62 @@ import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
-import {getFirestore, getDocs, collection, query, where, QuerySnapshot} from "firebase/firestore"
+import { getFirestore,collection, getDocs, query, where} from "firebase/firestore"
 
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { id } = useParams();
-   
- /* const getProducts = () => {
-    const db = getFirestore ();
-    const querySnapshot = collection(db, "items");
-    
-      if (category){
-        const newConfiguration = query(
-          querySnapshot, 
-          where('categoryId', '==', category)
-          );
-          getDocs(newConfiguration)
-           .then((response) => {
-             const data = response.docs.map((doc)=>{
-              return {id: doc.id, ...doc.data()};
-          });
-          setLoading(false);
-          setProducts(data);  
-      })
-        .catch(error => console.log(error));   
-
-      } else{
-        getDocs(querySnapshot)
-        .then((response) => {
-          const data = response.docs.map((doc)=>{
-            return {id: doc.id, ...doc.data()};
-          });
-           setLoading(false);
-          setProducts(data);  
-      })
-        .catch(error => console.log(error));           
-      }
-  };*/
+  let { categoryId } = useParams();
   
-  useEffect(() => {
-    const db = getFirestore();
+  const db = getFirestore();
+  
+  async function getItems() {
     const itemsCollection = collection(db, "items");
-    const q = id ? query (itemsCollection, where("category", "==", id)) : itemsCollection;
-      getDocs(q).then((snapShot) => {
-                setItems(snapShot.docs.map((doc) => ({id:doc.id, ...doc.data()})));
-                setLoading(false);
-    })
-  }, [id]);
+    const snapshot = await getDocs(itemsCollection);
+    const ItemsDB = snapshot.docs.map((doc) => {
+      let Items = doc.data();
+      Items.id = doc.id;
+      return Items;
+    });
+    return ItemsDB;
+  }
+  async function getItemsByCategory(categoryId) {
+    const itemsCollection = collection(db, "items");
+    const q = query(itemsCollection.where("categoryId", "==", categoryId));
+    const querySnapshot = await getDocs(q);
+    const ItemsDB = querySnapshot.docs.map((doc) => {
+      let Items = doc.data();
+      Items.id = doc.id;
+      return Items;
+    });
+    return ItemsDB;
+  }
+
+  useEffect(() => {
+    if (!categoryId) {
+      // Si no hay un categoryId, se obtienen todos los items
+      getItems()
+        .then((resolveDB) => {
+          setItems(resolveDB);
+          setLoading(false);
+        })
+        .catch((rejectDB) => {
+          alert(rejectDB);
+        })
+    } else {
+      // Si hay un categoryId, se obtienen los items correspondientes a esa categoría
+      getItemsByCategory(categoryId)
+        .then((resolveDB) => {
+          setItems(resolveDB);
+          setLoading(false);
+        })
+        .catch((rejectDB) => {
+          alert(rejectDB);
+        })
+    }
+  }, [categoryId])
+  
 
   return (
     <div>
